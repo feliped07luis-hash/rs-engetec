@@ -1,0 +1,116 @@
+:root{--ciano-txt:#18e0d0;--err:#ffd23f;--borda:rgba(255,255,255,.14);--topo:rgba(20,10,42,.92);--rosa:#ff2e93;--laranja:#ff8a1f;--amarelo:#ffd23f;--roxo:#7b2cbf;--ciano:#18e0d0;--noite:#140a2a;--noite2:#1f1040;--texto:#f5ecff;--suave:#bfaedb;
+--grad:linear-gradient(135deg,var(--amarelo),var(--laranja) 35%,var(--rosa) 70%,var(--roxo))}
+/* Modo claro: o escuro é o padrão */
+:root[data-tema="claro"]{--noite:#fff6fb;--noite2:#ffffff;--texto:#2a0a3a;--suave:#6a5280;--ciano-txt:#087c73;--err:#c0176b;--borda:rgba(42,10,58,.18);--topo:rgba(255,246,251,.94)}
+:root[data-tema="claro"] .card,:root[data-tema="claro"] .proj{box-shadow:0 6px 20px rgba(123,44,191,.12)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--noite);color:var(--texto);font:17px/1.6 "Rubik",system-ui,sans-serif}
+h1,h2,h3,.logo{font-family:"Bowlby One","Rubik",sans-serif;font-weight:400;line-height:1.05;margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--amarelo);outline-offset:2px}
+
+.topo{position:sticky;top:0;z-index:20;background:var(--topo);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,46,147,.35)}
+.barra{display:flex;align-items:center;justify-content:space-between;height:64px;position:relative}
+.logo{text-decoration:none;font-size:1.3rem}
+.logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav{display:flex;gap:22px;align-items:center;margin-left:auto}
+nav a{text-decoration:none;color:var(--suave);font-weight:500}
+nav a:hover{color:var(--amarelo)}
+.acoes{display:flex;gap:8px;margin-left:16px}
+.icone{background:none;border:1px solid var(--rosa);color:var(--texto);border-radius:8px;width:42px;height:42px;font-size:1.2rem;cursor:pointer}
+.menu-btn{display:none}
+
+.btn{display:inline-block;background:var(--grad);color:#2a0a3a;border:0;border-radius:999px;padding:14px 26px;font:600 1rem "Rubik",sans-serif;text-decoration:none;cursor:pointer;box-shadow:0 0 24px rgba(255,46,147,.45)}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost{background:transparent;color:var(--texto);border:2px solid var(--ciano);box-shadow:none;margin-left:10px}
+.btn.mini{padding:9px 18px;color:#2a0a3a}
+nav a.btn.mini:hover{color:#2a0a3a}
+
+.hero{--H:max(120px,10vw);--S:min(420px,70vw);color:#f5ecff;position:relative;overflow:hidden;padding:90px 0 calc(var(--H) + 70px);background:linear-gradient(180deg,#2b0f55 0%,#8a1e8f 45%,#ff2e93 75%,#ff8a1f 100%)}
+.sol{position:absolute;left:50%;bottom:calc(var(--H) - var(--S)*.42);width:var(--S);aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:linear-gradient(180deg,var(--amarelo),var(--laranja) 55%,var(--rosa));opacity:.9}
+.mar{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:var(--H);overflow:visible;z-index:1}
+.reflexo{animation:brilho 3.2s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:center}
+@keyframes brilho{from{opacity:.55;transform:scaleX(.92)}to{opacity:.95;transform:scaleX(1.04)}}
+.hero-txt{position:relative;z-index:2}
+.selo{display:inline-block;background:rgba(20,10,42,.7);border:1px solid var(--ciano);color:var(--ciano);border-radius:999px;padding:5px 16px;margin:0 0 18px;font-weight:500;font-size:.95rem}
+.hero h1{font-size:clamp(2.3rem,7vw,4.6rem);text-shadow:0 4px 0 rgba(20,10,42,.5)}
+.hero .btn.ghost{color:#fff}
+.hero h1 em{font-style:normal;color:var(--amarelo)}
+.lead{max-width:50ch;font-size:1.15rem;margin:20px 0 28px;color:#fff}
+
+.numeros{background:var(--noite2);border-bottom:1px solid var(--borda)}
+.grade-num{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;padding-top:30px;padding-bottom:30px}
+.grade-num strong{display:block;font:400 2.4rem "Bowlby One",sans-serif;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.grade-num span{color:var(--suave)}
+
+section{padding:70px 0}
+.faixa{background:var(--noite2)}
+h2{font-size:clamp(1.8rem,4.5vw,2.6rem);margin-bottom:10px}
+.sub{color:var(--suave);margin:0 0 30px;max-width:60ch}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.card{background:var(--noite2);border:1px solid rgba(255,46,147,.35);border-top:4px solid var(--rosa);border-radius:14px;padding:22px}
+.card:nth-child(3n+2){border-top-color:var(--laranja)}
+.card:nth-child(3n){border-top-color:var(--ciano)}
+.card h3{font-size:1.15rem;margin-bottom:8px}
+.card p{margin:0;color:var(--suave)}
+
+.tags{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0;padding:0}
+.tags li{border:1px solid var(--ciano-txt);color:var(--ciano-txt);border-radius:999px;padding:8px 18px;font-weight:500}
+
+.filtros{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{background:transparent;color:var(--texto);border:1px solid var(--rosa);border-radius:999px;padding:7px 16px;font:500 .95rem "Rubik",sans-serif;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--rosa);color:#fff}
+.projetos{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.proj{background:var(--noite2);border-radius:14px;overflow:hidden;border:1px solid var(--borda)}
+.foto{min-height:150px;background-size:cover;background-position:center}
+.img-sobre{background-image:linear-gradient(135deg,rgba(123,44,191,.28),rgba(255,138,31,.16)),url(img/sobre.jpg),url(img/sobre.svg)}
+.proj div:last-child{padding:16px 18px 20px}
+.proj small{color:var(--ciano-txt);font-weight:500}
+.proj h3{font-size:1.05rem;margin:4px 0 6px}
+.proj p{margin:0;color:var(--suave);font-size:.95rem}
+
+.sobre{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:center}
+.sobre .foto{min-height:300px;border-radius:16px}
+
+form{display:grid;gap:16px;max-width:560px}
+label{display:grid;gap:6px;font-weight:500}
+input,select,textarea{font:inherit;width:100%;padding:12px 14px;border:1px solid var(--borda);border-radius:10px;background:var(--noite2);color:var(--texto)}
+.err{color:var(--err);font-weight:400;font-size:.9rem;min-height:1.1em}
+.contato-grade{display:grid;grid-template-columns:1fr 1.2fr;gap:36px;align-items:start}
+.info{background:var(--noite2);border:1px solid var(--borda);border-top:4px solid var(--ciano-txt);border-radius:14px;padding:24px}
+.info h3{font-size:1.15rem;margin-bottom:14px}
+.info ul{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.info li span{display:block;color:var(--suave);font-size:.9rem}
+.info a{font-weight:600;word-break:break-word}
+footer a{color:inherit}
+.passos-sec{padding-bottom:20px}
+.passos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;counter-reset:p}
+.passos li{counter-increment:p;position:relative;background:var(--noite2);border:1px solid var(--borda);border-radius:14px;padding:58px 20px 22px}
+.passos li::before{content:counter(p);position:absolute;top:16px;left:20px;width:30px;height:30px;border-radius:50%;background:var(--grad);color:#2a0a3a;font:400 1rem/30px "Bowlby One",sans-serif;text-align:center}
+.passos h3{font-size:1.05rem;margin-bottom:6px}
+.passos p{margin:0;color:var(--suave);font-size:.95rem}
+.zap{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:30;width:56px;height:56px;border-radius:50%;background:var(--grad);color:#2a0a3a;display:grid;place-items:center;box-shadow:0 0 24px rgba(255,46,147,.6)}
+.zap:hover{filter:brightness(1.1)}
+.local-grade{display:grid;grid-template-columns:1fr 1.6fr;gap:28px;align-items:stretch}
+.local-grade .info{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.local-grade .info .btn{margin-top:auto}
+.mapa{position:relative;min-height:380px;border-radius:16px;overflow:hidden;border:2px solid var(--rosa);box-shadow:0 0 30px rgba(255,46,147,.45),inset 0 0 0 1px rgba(24,224,208,.5);background:#2b0f55}
+.mapa iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:invert(92%) hue-rotate(290deg) saturate(1.9) brightness(.92) contrast(.95)}
+.mapa::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(135deg,rgba(123,44,191,.32),rgba(255,138,31,.2));mix-blend-mode:color}
+.mapa-tag{position:absolute;top:12px;left:12px;z-index:2;pointer-events:none;background:rgba(20,10,42,.85);border:1px solid var(--ciano);color:#18e0d0;border-radius:8px;padding:4px 12px;font:400 .8rem "Bowlby One",sans-serif;letter-spacing:.04em}
+footer{border-top:1px solid rgba(255,46,147,.35);padding:26px 0;text-align:center;color:var(--suave)}
+
+@media (max-width:720px){
+  .menu-btn{display:block}
+  nav{margin-left:0}
+  .acoes{margin-left:auto}
+  nav{display:none;position:absolute;left:0;right:0;top:64px;flex-direction:column;align-items:flex-start;gap:14px;padding:18px 20px;background:var(--noite);border-bottom:1px solid var(--rosa)}
+  nav.aberto{display:flex}
+  .sobre,.contato-grade,.local-grade{grid-template-columns:1fr}
+  .mapa{min-height:320px}
+  .btn.ghost{margin:12px 0 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reflexo{animation:none}}
