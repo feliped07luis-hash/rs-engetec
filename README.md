@@ -7,7 +7,7 @@ O visual é inspirado na paleta de cores do pôr do sol do GTA VI (rosa, laranja
 
 **Site no ar:** https://feliped07luis-hash.github.io/rs-engetec/
 
-> Troque `SEU-USUARIO` pelo seu nome de usuário do GitHub.
+
 
 ## O que o site tem
 
